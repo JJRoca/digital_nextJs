@@ -26,6 +26,7 @@ export default async function Categorias(){
            <th className="border p-2">Estado</th>
          </tr>
        </thead>
+       
        <tbody>
          {categoria.map((value, index) => (
            <tr key={value.id} className={(index + 1) % 2 === 0 ? 'bg-gray' : ''}>
