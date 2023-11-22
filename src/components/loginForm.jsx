@@ -29,7 +29,7 @@ export default function LoginForm() {
         return;
       }
       console.log("login true")
-      router.replace("categoria");
+      router.replace("main");
     } catch (error) {
       console.log("type of error",error);
     }
