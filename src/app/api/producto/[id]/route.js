@@ -3,25 +3,25 @@ import mongoose from "mongoose";
 import Producto from "@/models/producto";
 import { connectDB } from "@/libs/mongoose";
 
-export async function GET(request,{params}){
-  try {
-    await connectDB();
-    const id=params.id;
-    const producto=await Producto.findById(id);
-    console.log("producto-----------",producto)
-    if (!producto){
-      return NextResponse({
-        mensaje:"Producto no encontrado"
-      },{status:400})
-    }
-    return NextResponse.json({
-      producto
-    })
-  } catch (error) {
-    console.log(error);
-    return NextResponse(error.message,{status:400})
-  }
-}
+// export async function GET(request,{params}){
+//   try {
+//     await connectDB();
+//     const id=params.id;
+//     const producto=await Producto.findById(id);
+//     console.log("producto-----------",producto)
+//     if (!producto){
+//       return NextResponse({
+//         mensaje:"Producto no encontrado"
+//       },{status:400})
+//     }
+//     return NextResponse.json({
+//       producto
+//     })
+//   } catch (error) {
+//     console.log(error);
+//     return NextResponse(error.message,{status:400})
+//   }
+// }
 
 export async function DELETE(request,{params}){
   try {

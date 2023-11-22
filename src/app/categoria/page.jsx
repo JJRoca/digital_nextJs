@@ -17,6 +17,8 @@ export default async function Categorias(){
           <Link href="producto">Producto</Link>
           <br />
           <Link href="usuario">Usuario</Link>
+          <br />
+          <Link href="register">Registrar</Link>
        <table className="border-collapse border w-full">
        <thead>
          <tr>

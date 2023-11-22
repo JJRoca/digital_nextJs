@@ -2,13 +2,13 @@
 import React from 'react';
 import Link from 'next/link';
 export const fetchProductos = () => {
-  return fetch("http://localhost:3000/api/producto")
+  return fetch("http://localhost:3000/api/producto",{cache: 'force-cache'})
     .then(res => res.json());
 }
 
 export default async function Productos() {
-  const { producto } = await fetchProductos();
-  console.log("productos---", producto);
+  const { productos } = await fetchProductos();
+  console.log("productos---", productos);
 
   return (
     <div>
@@ -32,7 +32,7 @@ export default async function Productos() {
         </tr>
       </thead>
       <tbody>
-        {producto.map((value, index) => (
+        {productos.map((value, index) => (
           <tr key={value.id} className={(index + 1) % 2 === 0 ? 'bg-gray' : ''}>
             <td className="border p-2">{index + 1}</td>
             <td className="border p-2">{value.nombre}</td>
